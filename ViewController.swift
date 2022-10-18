@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // 변수 / 속성
     @IBOutlet weak var mainLabel: UILabel!
     
     @IBOutlet weak var comImageView: UIImageView!
@@ -17,8 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var comChoiceLabel: UILabel!
     @IBOutlet weak var myChoiceLabel: UILabel!
     
-    var myChoice: Rps = Rps.rock
-    var comChoice: Rps = Rps(rawValue: Int.random(in: 0...2))!
+    // 데이터 저장을 위한 변수 (컴퓨터 선택/나의 선택)
+    var myChoice: Rps = Rps.rock // 나의 선택에 대한 변수
+    var comChoice: Rps = Rps(rawValue: Int.random(in: 0...2))! // 컴퓨터의 선택에 대한 변수(랜덤)
     
     
     // 함수 / 메서드
@@ -37,12 +39,10 @@ class ViewController: UIViewController {
     // 가위/바위/보 버튼
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
         // 가위/바위/보(enum)를 선택해서 그 정보를 저장 해야됨
-        //        guard let title = sender.currentTitle else {
-        //            return
-        //        }
         
         // 버튼의 문자를 가져옴
-        let title = sender.currentTitle!
+//        guard let title = sender.currentTitle else { return }
+        let title = sender.currentTitle! // currentTitle은 버튼의 제목을 가져오는 API
         print(title)
         
         switch title {
